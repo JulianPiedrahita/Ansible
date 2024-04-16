@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:latest
 
 ENV ANSIBLE_VERSION 2.9.17
 
@@ -20,8 +20,13 @@ RUN apt-get update; \
     apt-get install -y wget; \
     apt-get install -y nodejs; \
     apt-get install -y npm; \
-    apt install lxc; \
+    apt install lxc -y; \
+    apt install openssh-client -y; \
+    apt install openssh-server -y; \
+    apt install snapd -y; \
+    Snap install lxd -y; \
     apt-get clean all
+
 
 RUN wget https://deb.nodesource.com/setup_20.x
 RUN chmod +x setup_20.x

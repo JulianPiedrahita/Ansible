@@ -1,0 +1,4 @@
+# Ansible
+
+
+docker build -t test_ansible:v1 .
